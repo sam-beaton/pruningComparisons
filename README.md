@@ -9,17 +9,20 @@ This repository contains scripts for fNIRS data pruning  using different methods
 ## Repository Structure
 ```
 pruningComparisons/
+│ 
 │── pruningComparisonsMatlab/
 │   ├── pruneRunAll.m
 │   ├── +pruneTools/ # modular helpfer functions
 |   ├── collationScripts/ # collates results form pruning into tables which are called using R scripts
 │   ├── stats/  # Folder for statistical outcomes
+│ 
 │── pruningComparisonsR/
 │   ├── compareCVandSCI.R #compares CV, SCI Only and full QT-NIRS pruning
 │   ├── prepBrightMotionMLM.R # uses MLM to invesitgate predictorsd associated with motion occurrence
 │   ├── prepBrightSciPspMLM.R # uses MLM to investigate effects on average SCi and PSP measures
 │   ├── prepBrightQtParamsMLM  # uses MLM to invesitgate effects of changing SCI- and PSP Thresholds in QT-NIRS
 │   ├── parameterChoice.R # script to aid QT-NIRS parameter selection
+│ 
 │── README.md
 
 ```
