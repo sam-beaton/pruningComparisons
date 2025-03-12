@@ -19,7 +19,7 @@ data = table('Size', [0, length(columnNames)], ...
 for iCohort = 1:length(cohorts)
 
     cohort = cohorts{iCohort};
-    cohortStatsDir = strcat('/Users/sambe/Documents/MATLAB/matlabProjects/PreP/stats/bright/', cohort, '/');
+    cohortStatsDir = strcat(statsDir, cohort, '/');
     
     for iTask = 1:length(tasks)
     
