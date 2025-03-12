@@ -10,18 +10,17 @@ clear; close all;
 
 %% Add relevant toolboxes to current path
 % Underneath parameter settings for ease of access to change
-addpath(genpath('/Users/sambe/Documents/MATLAB/Toolboxes/DOT-HUB_toolbox'))
-addpath(genpath('/Users/sambe/Documents/MATLAB/Toolboxes/Homer2'))
-addpath(genpath('/Users/sambe/Documents/MATLAB/Toolboxes/qt-nirs'))
-addpath(genpath('/Users/sambe/Documents/MATLAB/matlabProjects/pruningComparisons'))
+addpath(genpath('[path-to...]/Homer2'))
+addpath(genpath('[path-to...]/qt-nirs'))
+addpath(genpath('[path-to...]/pruningComparisons')) [path-to...]
 
 %initialise parameters variable
 params = struct();
 
 %Change cohort variables here (won't change for entire run of script)
-params.dataRawLoc = '/Users/sambe/Data_raw/bright/'; % Main directory with original .nirs data file (before cutting)
-params.dataOutLoc = '/Users/sambe/Data/prep/bright/'; %parent directory for saved pruned files
-params.statsOutLoc = '/Users/sambe/Documents/MATLAB/matlabProjects/PreP/stats/bright/'; %parent directory for saved data files
+params.dataRawLoc = '...'; % Main directory with original .nirs data file 
+params.dataOutLoc = '...'; %parent directory for saved pruned files
+params.statsOutLoc = 'e.g. [path-to...]/stats/'; %parent directory for saved data files
 
 %%% ============ Cohort variables/arguments =================
 cohorts = {'gm', 'uk'}; % 'uk' or 'gm'
