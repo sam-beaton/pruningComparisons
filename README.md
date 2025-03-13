@@ -31,7 +31,7 @@ pruningComparisons/
 - MATLAB (Tested on version R2022b)
 - R (Tested on version 4.4.1)
 - Required Matlab toolboxes: qt-nirs, Homer2
-- Required R packages: `lme4`, `tidyr`, `foreach`, `doParallel`, `dplyr`, `effectsize`, `MuMIn`, `ggplot2`, `viridis`, `arules`, `data.table`, `effects`, `lmerTest`, `scales`, `Matrix`,  `gridExtra`, `MASS`, `car`,    (install using `install.packages("package_name")`)
+- Required R packages: `lme4`, `tidyr`, `foreach`, `doParallel`, `dplyr`, `effectsize`, `MuMIn`, `ggplot2`, `viridis`, `arules`, `data.table`, `effects`, `lmerTest`, `scales`, `Matrix`,  `gridExtra`, `MASS`, `car`
 
 
 ## License
