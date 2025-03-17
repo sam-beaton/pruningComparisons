@@ -1,7 +1,7 @@
 # pruningComparisons
 
 ## Overview
-This repository contains scripts for fNIRS data pruning  using different methods and parameters, plus analysis of the effects on data quality and retention.
+This repository contains scripts for fNIRS data pruning using different methods and parameters, plus analysis of the effects on data quality and retention.
 
 - **MATLAB (`pruningComparisonsMatlab/`)**: Processes raw data and generates output tables.
 - **R (`pruningComparisonsMatlab/`)**: Runs multilevel models (MLMs) on processed data. Also includes a parameter choice script.
