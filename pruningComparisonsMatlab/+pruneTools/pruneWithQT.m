@@ -1,4 +1,4 @@
-function [nirs, qualityMatrices] = pruneTools.pruneWithQT(nirs, params, numChan)
+function [nirs, qualityMatrices] = pruneWithQT(nirs, params, numChan)
 
 % Applies the QT-NIRS algorithm to prune channels based on scalp coupling 
 % index (SCI) and power spectral power (PSP) thresholds. Ensures that both 
