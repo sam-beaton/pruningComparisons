@@ -10,7 +10,7 @@ function [inputPath, outputsFolderPath] = configurePaths(dataRawLoc, dataOutLoc,
     
     % Configure output path based on pruning method
     if params.pruneQT == 1
-        paramsAppend = strcat(params.pruneName, '_SCI', num2str(params.sci_threshold), '_PSP', num2str(params.psp_threshold));
+        paramsAppend = strcat(params.pruneName, '_SCI', num2str(params.sciThreshold), '_PSP', num2str(params.pspThreshold));
         outputsFolderPath = fullfile(dataOutLoc, cohort, timepoint, task, 'prune', paramsAppend);
     else
         outputsFolderPath = fullfile(dataOutLoc, cohort, timepoint, task, 'prune/pruneCV08');

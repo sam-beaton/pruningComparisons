@@ -30,7 +30,7 @@ timepoints = {'05mo', '08mo', '12mo', '18mo', '24mo'}; %'01mo', '05mo', '08mo', 
 %%% ======= Pruning variables/arguments ============
 params.pruneQT = 0; %1 = QT-NIRS; 0 = CV pruning; 2 = QT-NIRS no Homer pre-pruning; 3 = just Homer pre-pruning
 detailLevel = 'fine'; % broad or fine
-if pruneQT == 1
+if params.pruneQT == 1
     sciThresholdValues = [0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6, 0.55, 0.5, 0.45, 0.4, 0.35, 0.3, 0.25, 0.2, 0.15, 0.1, 0.05]; %your param values here
     detailLevel = lower(detailLevel); %just in case!
     if strcmp(detailLevel, 'broad')
@@ -51,7 +51,7 @@ for iCohort = 1:length(cohorts)
 
         params.task = tasks{iTask};
 
-        if pruneQT == 1
+        if params.pruneQT == 1
             % Start a parallel pool (specify number of workers)
             parpool(6);
             
@@ -72,7 +72,7 @@ for iCohort = 1:length(cohorts)
                         params.pspThreshold = pspThreshold
                         
                         %prune:        
-                        [meanChans, meanSNR] = pruneGetVals(params);                
+                        [meanChans, meanSNR] = pruneTools.pruneGetVals(params);                
                         
                         %update summary data:
                         nextIndices = find(pruneMatrix == 0);

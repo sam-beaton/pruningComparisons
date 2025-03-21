@@ -57,9 +57,9 @@ function [meanChans, meanSNR] = pruneGetVals(params, varargin)
     cohort = params.cohort;
     timepoint = params.timepoint;
     task = params.task;
-    sciThreshold = params.sci_threshold;
-    pspThreshold = params.psp_threshold;
-    pruneQT = params.QT;
+    sciThreshold = params.sciThreshold;
+    pspThreshold = params.pspThreshold;
+    pruneQT = params.pruneQT;
 
     
     % configure input/output paths
