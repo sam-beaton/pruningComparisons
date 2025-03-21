@@ -85,8 +85,8 @@ function [meanChans, meanSNR] = pruneGetVals(params, varargin)
         % Load subject data
         [nirs, partName] = pruneTools.loadSubjectData(sub(nsub).name);
         
-        % Calculate DPF for age
-        params.dpf = pruneTools.calculateDPF(timepoint, nirs);
+        % Calculate DPF for age    
+        params.dpf = pruneTools.calculateDPF(timepoint, nirs, 1);
         
         % Detect motion artifacts and prune channels
         [nirs, qualityMatrices, windowInfo] = pruneTools.pruneChannels(nirs, params);
