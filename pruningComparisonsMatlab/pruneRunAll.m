@@ -98,11 +98,11 @@ for iCohort = 1:length(cohorts)
             for i = 1:length(timepoints)
                 pruneMetrics = pruneMetricsSummary{i};
                 timepoint = timepoints{i};
-                statsDirecName = strcat(statsOutLoc, cohort, '/overall/', task, '/prune/');
+                statsDirecName = strcat(params.statsOutLoc, params.cohort, '/overall/', params.task, '/prune/');
                 if ~exist(statsDirecName, 'dir')
                     mkdir(statsDirecName)
                 end
-                pruneMetricsFileName = strcat(statsDirecName, task, timepoint, 'SummaryPruneMetrics.mat');
+                pruneMetricsFileName = strcat(statsDirecName, params.task, params.timepoint, 'SummaryPruneMetrics.mat');
                 save(pruneMetricsFileName, 'pruneMetrics');
             end
         
