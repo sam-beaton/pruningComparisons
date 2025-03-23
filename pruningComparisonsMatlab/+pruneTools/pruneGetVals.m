@@ -19,15 +19,13 @@ function [meanChans, meanSNR] = pruneGetVals(params, varargin)
 % cohort:           'gm' or 'uk'
 %
 % timepoint:        defines age of participants; must include 'mo'
-%                   INDiGO:
-%                   '1mo', '6mo', '12mo'
 %                   
 % task:             name of task 
 %                   INDiGO: 'hand', 'fc1' or 'fc2'
 %
-% sci_threshold:    SCI threshold parameter for QT-NIRS
+% sciThreshold:     SCI threshold parameter for QT-NIRS
 %
-% psp_threshold:    PSP threshold parameter for QT-NIRS
+% pspThreshold:     PSP threshold parameter for QT-NIRS
 %
 % -------------------------------------------------------------------------
 % Arguments:

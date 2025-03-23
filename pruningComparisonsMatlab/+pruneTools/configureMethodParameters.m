@@ -21,8 +21,8 @@ function params = configureMethodParameters(params, timepoint)
     params.bpFmax = 3.0; % Minagawa et al. 2023
     params.windowSec = 3; % Better motion detection exclusion using windows from QT-NIRS pruning
     params.windowOverlap = 0; % Pollonini et al 2016
-    params.quality_threshold = 0.75; % QT-NIRS quality threshold
-    params.gui_flag = 0; % Set to 1 to visualize QT-NIRS quality graphics
+    params.qualityThreshold = 0.75; % QT-NIRS quality threshold
+    params.guiFlag = 0; % Set to 1 to visualize QT-NIRS quality graphics
     
     % Motion detection parameters
     params.tMotion = 1; % Di Lorenzo et al. 2019

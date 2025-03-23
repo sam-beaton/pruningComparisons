@@ -4,38 +4,50 @@ function saveStatistics(statsOutLoc, cohort, task, timepoint, params, homerPrune
 % files, including Homer pruning matrices, SCI averages, PSP averages, and 
 % motion window information.
 
+    overallDir = fullfile(statsOutLoc, cohort, 'overall', task, 'prune');
+    timepointDir = fullfile(statsOutLoc, cohort, timepoint, task, 'prune');
+
     % Create required directories
-    if ~exist(fullfile(statsOutLoc, cohort, 'overall', task, 'prune'), 'dir')
-        mkdir(fullfile(statsOutLoc, cohort, 'overall', task, 'prune'));
+    if ~exist(overallDir, 'dir')
+        mkdir(overallDir);
     end
     
-    if ~exist(fullfile(statsOutLoc, cohort, timepoint, task, 'prune'), 'dir')
-        mkdir(fullfile(statsOutLoc, cohort, timepoint, task, 'prune'));
+    if ~exist(timepointDir, 'dir')
+        mkdir(timepointDir);
     end
     
     % Save Homer pruning matrix if needed
     if isfield(saveFlags, 'saveHomerPrune')
-        save(fullfile(statsOutLoc, cohort, 'overall', task, 'prune', [task timepoint 'HomerPrunedChannels']), 'homerPruneMat');
+        save(fullfile(overallDir, [task timepoint 'HomerPrunedChannels']), 'homerPruneMat');
     end
     
     % Save SCI averages if needed
     if isfield(saveFlags, 'saveAvgSCI')
-        save(fullfile(statsOutLoc, cohort, 'overall', task, 'prune', [task timepoint 'AvgSCImat']), 'sciAvgs');
+        save(fullfile(overallDir, [task timepoint 'AvgSCImat']), 'sciAvgs');
     end
     
     % Save PSP averages if needed
     if isfield(saveFlags, 'saveAvgPSP')
-        save(fullfile(statsOutLoc, cohort, 'overall', task, 'prune', [task timepoint 'AvgPSPmat']), 'pspAvgs');
+        save(fullfile(overallDir, [task timepoint 'AvgPSPmat']), 'pspAvgs');
     end
     
     % Save motion windows if needed
     if isfield(saveFlags, 'saveMotion')
-        save(fullfile(statsOutLoc, cohort, 'overall', task, 'prune', [task timepoint 'MotionWindowsMat']), 'motionWindows');
+        save(fullfile(overallDir, [task timepoint 'MotionWindowsMat']), 'motionWindows');
     end
     
     % Set file names based on pruning method
     if params.pruneQT == 1
         % Remove periods from paramsAppend to save files
         paramsAppend = strrep(params.pruneName, '.', '');
-        paramsAppend = [paramsAppend '_SCI' num2str(params.sci_threshold) '_PSP' num2str(params.psp_threshold)];
-        paramsAppend = strrep(paramsAppend, '.',
+        paramsAppend = [paramsAppend '_SCI' num2str(params.sciThreshold) '_PSP' num2str(params.pspThreshold)];
+    else
+        paramsAppend = 'CV';
+    end
+
+    % Save retained channels
+    save(fullfile(timepointDir, [task timepoint '_ChannelsRetained_' paramsAppend '.mat']), 'channelsRetained');
+    
+    % Save SNR matrix
+    save(fullfile(timepointDir, [task timepoint '_SNRMat_' paramsAppend '.mat']), 'snrMat');
+end
